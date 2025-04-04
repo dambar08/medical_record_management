@@ -66,4 +66,4 @@ end
 
 gem "paper_trail", "~> 16.0"
 
-gem "searchkick", "~> 5.4"
+gem "searchkick", "~> 5.5"
