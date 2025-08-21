@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :examples
+  resources :appointments
+  resources :locations
+  resources :patients, only: [ :show ]
+  resources :calendar, only: [ :index, :show ]
+  resources :legals, only: [] do
+    collection do
+      get :terms
+      get :privacy_policy
+      get :license
+    end
+  end
+
+  namespace :admins do
+    root "dashboards#show"
+    resource :dashboard, only: [ :show ]
+    resources :patients
+  end
+
+
   mount Rswag::Api::Engine => "/api-docs"
   mount Rswag::Ui::Engine => "/api-docs"
   resources :announcements
@@ -14,5 +35,5 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "pages#index"
 end

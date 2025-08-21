@@ -1,0 +1,16 @@
+# This file contains default values, and does not need to be edited. All
+# important settings can be changed from the admin interface.
+
+defaults: &defaults
+  site_title: Medical Record Management
+  site_short_description: ''
+  site_description: ''
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

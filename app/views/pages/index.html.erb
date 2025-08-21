@@ -1,0 +1,18 @@
+<header class="container">
+  <div class="flex flex-row gap-2">
+    <div>Community</div>
+    <div>Developer</div>
+    <div>Documentation</div>
+  </div>
+</header>
+<div>What</div>
+<footer>
+    <nav>
+        <ul class="flex flex-row gap-2">
+            <li><%=link_to "Terms", terms_legals_path %></li>
+            <li><%=link_to "License", license_legals_path %></li>
+            <li><%=link_to "Privacy Policy", privacy_policy_legals_path %></li>
+        </ul>
+    </nav>
+  <div>Copyright &copy; <%= Date.current.year %> OpenMedicalRecord.</div>
+</footer>

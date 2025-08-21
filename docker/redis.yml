@@ -3,8 +3,6 @@ name: medical_record_management
 services:
   redis:
     image: redis:7.2.5
-    volumes:
-      - ~/volumes/medical_record_management/redis:/data
     healthcheck:
       test: redis-cli ping
       interval: 1s

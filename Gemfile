@@ -4,7 +4,6 @@ gem "rails", "~> 8.0.1" # Bundle edge Rails instead: gem "rails", github: "rails
 gem "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "sqlite3", ">= 2.1" # Use sqlite3 as the database for Active Record
 gem "puma", ">= 5.0" # Use the Puma web server [https://github.com/puma/puma]
-gem "importmap-rails" # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "turbo-rails" # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "stimulus-rails" # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "tailwindcss-rails" # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
@@ -19,6 +18,10 @@ gem "searchkick", "~> 5.5"
 gem "rolify", "~> 6.0"
 gem "rswag-api"
 gem "rswag-ui"
+gem "jsbundling-rails", "~> 1.3"
+gem "cssbundling-rails", "~> 1.4"
+gem "simple_form", "~> 5.3"
+gem "annotate", "~> 2.6"
 gem "pundit", "~> 2.5"
 gem "pg", "~> 1.5"
 gem "pagy", "~> 9.3"
@@ -34,6 +37,7 @@ group :development, :test do
   gem "dotenv-rails", "~> 3.1"
   gem "rubocop-rails-omakase", require: false # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rswag-specs"
+  gem "factory_bot_rails", "~> 6.4"
 end
 
 group :development do
