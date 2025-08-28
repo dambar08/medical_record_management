@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Coherts" %>
+
+<h1>Coherts</h1>
+
+<div id="coherts">
+  <% @coherts.each do |cohert| %>
+    <%= render cohert %>
+    <p>
+      <%= link_to "Show this cohert", [:admins, cohert] %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New cohert", new_admins_cohert_path %>

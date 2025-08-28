@@ -1,0 +1,12 @@
+<% content_for :title, "Editing condition" %>
+
+<h1>Editing condition</h1>
+
+<%= render "form", condition: @condition %>
+
+<br>
+
+<div>
+  <%= link_to "Show this condition", [:admins, :patients, @condition] %> |
+  <%= link_to "Back to conditions", admins_patients_conditions_path %>
+</div>

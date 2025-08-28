@@ -1,0 +1,66 @@
+<% content_for :title, "Service Queue" %>
+<div class="w-full divide-y divide-neutral-300">
+  <div class="flex justify-between items-center">
+    <div class="p-2">
+      <div>Clinic</div>
+      <h1 class="font-medium text-3xl">Service Queue</h1>
+    </div>
+    <div class="p-2">
+      <div>Location</div>
+      <div>
+        <div>Outpatient Clinic</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="px-4 py-4">
+      <div class="flex flex-row items-center justify-between">
+        <div>Clinic metrics</div>
+        <div>
+          <div data-controller="dropdown" class="relative">
+            <button type="button" data-action="dropdown#toggle click@window->dropdown#hide">Queue screen</button>
+            <div
+                data-dropdown-target="menu"
+                class="hidden transition transform origin-top-right absolute right-0"
+                data-transition-enter-from="opacity-0 scale-95"
+                data-transition-enter-to="opacity-100 scale-100"
+                data-transition-leave-from="opacity-100 scale-100"
+                data-transition-leave-to="opacity-0 scale-95"
+            >
+              <div class="bg-neutral-50 border">
+                <a href="#" data-action="dropdown#toggle" class="whitespace-nowrap">Add new service</a>
+                <a href="#" data-action="dropdown#toggle" class="whitespace-nowrap">Add new service room</a>
+                <a href="#" data-action="dropdown#toggle" class="whitespace-nowrap">Add provider queue room</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-2 py-4 px-4">
+      <div class="border border-neutral-300 p-4">
+        <div class="flex flex-row justify-between items-center">
+          <div>Checked in patients</div>
+          <div>Patient list</div>
+        </div>
+        <div>Patients</div>
+        <div>0</div>
+      </div>
+      <div class="border border-neutral-300 p-4">
+        <div class="flex flex-row justify-between items-center">
+          <div>Waiting for:</div>
+          <div>Patient list</div>
+        </div>
+        <div>Patients</div>
+        <div>0</div>
+      </div>
+      <div class="border border-neutral-300 p-4">
+        <div>
+          <div>Average wait time today</div>
+        </div>
+        <div>Minutes</div>
+        <div>--</div>
+      </div>
+    </div>
+  </div>
+</div>

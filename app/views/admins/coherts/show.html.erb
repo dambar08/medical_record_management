@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cohert %>
+
+<div>
+  <%= link_to "Edit this cohert", edit_admins_cohert_path(@cohert) %> |
+  <%= link_to "Back to coherts", admins_coherts_path %>
+
+  <%= button_to "Destroy this cohert", [:admins, @cohert], method: :delete %>
+</div>

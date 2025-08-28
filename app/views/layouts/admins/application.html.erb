@@ -1,0 +1,41 @@
+<% content_for(:head) do %>
+  <%#= stylesheet_link_tag :admins_application, "data-turbo-track": "reload" %>
+  <%#= javascript_include_tag "admins_application", "data-turbo-track": "reload", type: "module" %>
+<% end %>
+<%= render "layouts/shared/htmldoc" do %>
+  <div>
+    <header class="bg-emerald-800 text-white">
+      <div class="flex flex-row justify-between ">
+        <div class="flex flex-row">
+          <div class="flex flex-row gap-2">
+            <div class="p-2">MRC</div>
+            <div class="p-2">Medical Record Management</div>
+          </div>
+          <div class="flex flex-row gap-2">
+            <div class="p-2">Dashboard </div>
+            <div class="p-2 flex flex-row gap-1">
+              <div>Outpatient Clinic</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row gap-2 items-center">
+          <div><svg focusable="false" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M29,27.5859l-7.5521-7.5521a11.0177,11.0177,0,1,0-1.4141,1.4141L27.5859,29ZM4,13a9,9,0,1,1,9,9A9.01,9.01,0,0,1,4,13Z"></path></svg></div>
+          <div>Setting</div>
+          <div>Add</div>
+          <div>Account</div>
+          <div>Administrator</div>
+        </div>
+      </div>
+    </header>
+    <div class="flex flex-row divide-x divide-neutral-300">
+      <div>
+        <% if content_for?(:left_sidebar) %>
+          <%= yield(:left_sidebar) %>
+        <% else %>
+          <%= render(partial: "layouts/admins/shared/left_sidebar") %>
+        <% end %>
+      </div>
+      <%= yield %>
+    </div>
+  </div>
+<% end %>

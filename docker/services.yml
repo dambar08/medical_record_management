@@ -1,0 +1,18 @@
+# This configuration is intended for development purpose, it's **your** responsibility to harden it for production
+name: medical_record_management
+services:
+  redis:
+    volumes:
+      - medical_record_management_redis_data:/data
+    extends:
+      file: ./redis.yml
+      service: redis
+  postgresql:
+    volumes:
+      - medical_record_management_postgres_data:/var/lib/postgresql/data/
+    extends:
+      file: ./postgresql.yml
+      service: postgresql
+volumes:
+  medical_record_management_redis_data:
+  medical_record_management_postgres_data:

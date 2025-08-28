@@ -1,0 +1,14 @@
+{
+    "i18n-ally.localesPaths": [
+        "config/locales",
+        "app/javascript/app/i18n"
+    ],
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/.ruby-lsp": true,
+        "**/rspec": true,
+        "**/test": true
+    }
+}

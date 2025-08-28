@@ -1,0 +1,19 @@
+<%= simple_form_for([:admins, patient], class: "contents") do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+      <ul class="list-disc ml-6">
+        <% patient.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <div>1. Basic Info</div>
+    <div>All fields are required unless marked optional</div>
+  </div>
+  <div class="inline">
+    <%= form.submit %>
+  </div>
+<% end %>

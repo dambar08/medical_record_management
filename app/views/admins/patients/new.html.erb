@@ -1,0 +1,15 @@
+<% content_for :title, "New patient" %>
+<% content_for :left_sidebar do %>
+  <div>
+    <div>Create new patient</div>
+    <div>
+      <div>Basic Info</div>
+      <div>Contact Details</div>
+      <div>Relationships</div>
+    </div>
+  </div>
+<% end %>
+<div class="md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">New patient</h1>
+  <%= render "form", patient: @patient %>
+</div>

@@ -1,0 +1,33 @@
+<nav>
+  <ul class="min-w-xs">
+    <li>
+      <%= link_to admins_root_path do  %>
+        <div class="p-2 hover:bg-neutral-100">Home</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_patients_path do %>
+        <div class="p-2 hover:bg-neutral-100">Patient lists</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_laboratories_path do %>
+        <div class="p-2 hover:bg-neutral-100">Laboratory</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_wards_path do %>
+        <div class="p-2 hover:bg-neutral-100">Wards</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_service_queues_path do %>
+        <div class="p-2 hover:bg-neutral-100">Service Queues</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_appointments_path do %>
+        <div class="p-2 hover:bg-neutral-100">Appointments</div>
+      <% end %></li>
+  </ul>
+</nav>

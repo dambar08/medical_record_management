@@ -1,0 +1,12 @@
+<% content_for :title, "Editing cohert" %>
+
+<h1>Editing cohert</h1>
+
+<%= render "form", cohert: @cohert %>
+
+<br>
+
+<div>
+  <%= link_to "Show this cohert", [:admins, @cohert] %> |
+  <%= link_to "Back to coherts", admins_coherts_path %>
+</div>

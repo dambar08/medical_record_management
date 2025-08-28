@@ -1,0 +1,29 @@
+<div>
+  <% content_for(:left_sidebar) do %>
+    <%= render partial: "left_sidebar" %>
+  <% end %>
+  <div>
+    <div>
+      <div class="flex flex-row gap-2 items-center">
+        <div>ZR</div>
+        <div>Male</div>
+        <div class="bg-blue-200 text-blye-400 rounded-full px-3 py-1 text-xs text-center">Active Visit</div>
+      </div>
+      <div class="flex flex-row gap-2">
+        <div>50 yrs</div>
+        <div>*</div>
+        <div>1975</div>
+        <div class="rounded-full bg-neutral-100 px-3">MRM ID: <span class="font-bold">1000T9</span></div>
+      </div>
+    </div>
+    <div class="flex flex-row gap-2 justify-between items-center">
+      <div class="flex flex-row gap-2">
+        <div>Vitals & biometrics</div>
+        <div>Today 03:24 PM</div>
+        <div>Vitals history</div>
+      </div>
+      <div>Record vitals</div>
+    </div>
+    <%= yield %>
+  </div>
+</div>
