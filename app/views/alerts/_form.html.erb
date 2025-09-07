@@ -1,0 +1,17 @@
+<%= form_with(model: alert) do |form| %>
+  <% if alert.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(alert.errors.count, "error") %> prohibited this alert from being saved:</h2>
+
+      <ul>
+        <% alert.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing alert" %>
+
+<h1>Editing alert</h1>
+
+<%= render "form", alert: @alert %>
+
+<br>
+
+<div>
+  <%= link_to "Show this alert", @alert %> |
+  <%= link_to "Back to alerts", alerts_path %>
+</div>
