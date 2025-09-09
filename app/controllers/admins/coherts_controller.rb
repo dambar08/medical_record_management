@@ -25,7 +25,7 @@ class Admins::CohertsController < ApplicationController
 
     respond_to do |format|
       if @cohert.save
-        format.html { redirect_to [:admins, @cohert], notice: "Cohert was successfully created." }
+        format.html { redirect_to [ :admins, @cohert ], notice: "Cohert was successfully created." }
         format.json { render :show, status: :created, location: @cohert }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Admins::CohertsController < ApplicationController
   def update
     respond_to do |format|
       if @cohert.update(cohert_params)
-        format.html { redirect_to [:admins, @cohert], notice: "Cohert was successfully updated." }
+        format.html { redirect_to [ :admins, @cohert ], notice: "Cohert was successfully updated." }
         format.json { render :show, status: :ok, location: @cohert }
       else
         format.html { render :edit, status: :unprocessable_entity }

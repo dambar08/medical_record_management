@@ -13,7 +13,6 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/newsletter_subscriptions", type: :request do
-  
   # This should return the minimal set of attributes required to create a valid
   # NewsletterSubscription. As you add validations to NewsletterSubscription, be sure to
   # adjust the attributes here as well.

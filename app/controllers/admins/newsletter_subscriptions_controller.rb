@@ -25,7 +25,7 @@ class Admins::NewsletterSubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @newsletter_subscription.save
-        format.html { redirect_to [:admins, @newsletter_subscription], notice: "Newsletter subscription was successfully created." }
+        format.html { redirect_to [ :admins, @newsletter_subscription ], notice: "Newsletter subscription was successfully created." }
         format.json { render :show, status: :created, location: @newsletter_subscription }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Admins::NewsletterSubscriptionsController < ApplicationController
   def update
     respond_to do |format|
       if @newsletter_subscription.update(newsletter_subscription_params)
-        format.html { redirect_to [:admins, @newsletter_subscription], notice: "Newsletter subscription was successfully updated." }
+        format.html { redirect_to [ :admins, @newsletter_subscription ], notice: "Newsletter subscription was successfully updated." }
         format.json { render :show, status: :ok, location: @newsletter_subscription }
       else
         format.html { render :edit, status: :unprocessable_entity }
