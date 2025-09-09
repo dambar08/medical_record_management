@@ -1,0 +1,3 @@
+en:
+  color_hex:
+    message: 'must be be a 3 or 6 character hex (starting with #)'

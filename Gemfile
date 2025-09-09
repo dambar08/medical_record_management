@@ -54,3 +54,11 @@ group :test do
   gem "simplecov_json_formatter", require: false
   gem "rspec-rails", "~> 7.1"
 end
+
+gem "rails-settings-cached", "~> 2.9"
+
+gem "rack-attack", "~> 6.7"
+gem "rack-cors", "~> 3.0"
+gem "rack-timeout", "~> 0.7.0"
+
+gem "wcag_color_contrast", "~> 0.1.0"

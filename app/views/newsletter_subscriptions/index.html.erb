@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Newsletter subscriptions" %>
+
+<h1>Newsletter subscriptions</h1>
+
+<div id="newsletter_subscriptions">
+  <% @newsletter_subscriptions.each do |newsletter_subscription| %>
+    <%= render newsletter_subscription %>
+    <p>
+      <%= link_to "Show this newsletter subscription", newsletter_subscription %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New newsletter subscription", new_newsletter_subscription_path %>

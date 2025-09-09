@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :newsletter_subscriptions, only: [ :new, :create ] do
+    collection do
+      get :success
+      delete :unsubscribe
+    end
+  end
   resources :alerts
   resources :orders
   resources :examples
@@ -15,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
+    resources :newsletter_subscriptions
     namespace :patients do
       resources :appointments
     end
@@ -50,7 +57,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   mount Rswag::Api::Engine => "/api-docs"
   mount Rswag::Ui::Engine => "/api-docs"
   resources :announcements

@@ -1,0 +1,7 @@
+---
+en:
+  validators:
+    bytesize_validator:
+      non_negative: ":maximum must be a non-negative Integer"
+    color_contrast_validator:
+      must_be_darker: must be darker for accessibility

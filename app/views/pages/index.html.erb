@@ -1,18 +1,74 @@
-<header class="container">
-  <div class="flex flex-row gap-2">
-    <div>Community</div>
-    <div>Developer</div>
-    <div>Documentation</div>
+<header class="bg-black text-yellow-600">
+  <div class="container mx-auto">
+    <div class="flex flex-row gap-2 ">
+      <div class="p-2">Community</div>
+      <div class="p-2">Developer</div>
+      <div class="p-2">Documentation</div>
+    </div>
   </div>
 </header>
-<div>What</div>
+<div class="container mx-auto">
+  <div class="grid grid-cols-3 gap-2 ">
+    <div class="flex items-center justify-center">
+      <div class="text-orange-500">
+        <div class="text-7xl font-bold">1+</div>
+        <div>Countries</div>
+      </div>
+    </div>
+    <div class="flex items-center justify-center">
+      <div class="text-purple-500">
+        <div class="text-7xl font-bold">5+</div>
+        <div>Sites</div>
+      </div>
+    </div>
+    <div class="flex items-center justify-center">
+      <div class="text-emerald-500">
+        <div class="text-7xl font-bold">1000+</div>
+        <div>Patients</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div class="text-7xl font-bold">Our Mission</div>
+      <div>Improve healthcare delivery in resource-constrained environments by coordinating a global community that creates and sustains a robust, scalable, user-driven and open-source medical record platform.</div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div></div>
+      <div class="flex items-center justify-center min-h-96 max-h-96 h-full">
+        <div>We are a global community of truly dedicated, talented, and generous contributors who build and maintain the OpenMRS platform and other, foundational OpenMRS technical products.</div>
+      </div>
+      <div class="flex items-center justify-center min-h-96 max-h-96 h-full">
+        <div>We maintain a platform that countries and implementers use to create a customized EMR system in response to needs on the ground.</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+  <div>
+    <div class="text-7xl font-bold">Learn more about:</div>
+    <div>
+      <div>Who We Are: Our Community, Our Partners, and OpenMRS Inc</div>
+      <div>Our Technology: Our Product Vision, Our Platform, and Our Modules</div>
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <div>Join OpenMRS</div>
+    <div>and get the most out of our Digital Solutions and Global Community</div>
+    <div class="bg-purple-500 text-white inline p-2.5">Get involved</div>
+  </div>
+  <div class="flex flex-col">
+    <div>Subscribe</div>
+    <div>Join the 1,000+ people following the OpenMRS Newsletter</div>
+    <%= render partial: "newsletter_subscriptions/form", newsletter_subscription: @newsletter_subscription %>
+  </div>
+</div>
 <footer>
-    <nav>
-        <ul class="flex flex-row gap-2">
-            <li><%=link_to "Terms", terms_legals_path %></li>
-            <li><%=link_to "License", license_legals_path %></li>
-            <li><%=link_to "Privacy Policy", privacy_policy_legals_path %></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul class="flex flex-row gap-2">
+      <li><%=link_to "Terms", terms_legals_path %></li>
+      <li><%=link_to "License", license_legals_path %></li>
+      <li><%=link_to "Privacy Policy", privacy_policy_legals_path %></li>
+    </ul>
+  </nav>
   <div>Copyright &copy; <%= Date.current.year %> OpenMedicalRecord.</div>
 </footer>

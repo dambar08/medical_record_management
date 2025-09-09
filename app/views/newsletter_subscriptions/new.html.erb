@@ -1,0 +1,11 @@
+<% content_for :title, "New newsletter subscription" %>
+
+<h1>New newsletter subscription</h1>
+
+<%= render "form", newsletter_subscription: @newsletter_subscription %>
+
+<br>
+
+<div>
+  <%= link_to "Back to newsletter subscriptions", newsletter_subscriptions_path %>
+</div>
