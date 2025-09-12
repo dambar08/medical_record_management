@@ -1,7 +1,9 @@
 class ApplicationRecord < ActiveRecord::Base
+
   include ActiveRecord::Updatable
 
   primary_abstract_class
+  has_paper_trail
 
   QUERY_ESTIMATED_COUNT = <<~SQL.squish.freeze
     SELECT (
