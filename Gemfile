@@ -42,7 +42,9 @@ end
 group :development do
   gem "web-console" # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "hotwire-livereload", "~> 2.0"
-  gem "letter_opener", "~> 1.10"
+  gem "letter_opener_web", "~> 3.0"
+  gem "rack-mini-profiler", "~> 4.0"
+  gem "lookbook", "~> 2.3"
 end
 
 group :test do
@@ -60,5 +62,5 @@ gem "rails-settings-cached", "~> 2.9"
 gem "rack-attack", "~> 6.7"
 gem "rack-cors", "~> 3.0"
 gem "rack-timeout", "~> 0.7.0"
-
 gem "wcag_color_contrast", "~> 0.1.0"
+gem "view_component", "~> 4.0"

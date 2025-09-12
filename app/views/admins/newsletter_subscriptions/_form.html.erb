@@ -2,7 +2,6 @@
   <% if newsletter_subscription.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(newsletter_subscription.errors.count, "error") %> prohibited this newsletter_subscription from being saved:</h2>
-
       <ul>
         <% newsletter_subscription.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,8 +9,11 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.submit %>
+  <div class="my-5">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": newsletter_subscription.errors[:email].none?, "border-red-400 focus:outline-red-600": newsletter_subscription.errors[:email].any?}] %>
+  </div>
+  <div class="inline">
+    <%= form.submit "Subscribe" %>
   </div>
 <% end %>

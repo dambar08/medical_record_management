@@ -1,4 +1,5 @@
 class Admins::NewsletterSubscriptionsController < ApplicationController
+  before_action :ensure_turbo_frame, only: [:new]
   before_action :set_newsletter_subscription, only: %i[ show edit update destroy ]
 
   # GET /admins/newsletter_subscriptions or /admins/newsletter_subscriptions.json
@@ -27,6 +28,11 @@ class Admins::NewsletterSubscriptionsController < ApplicationController
       if @newsletter_subscription.save
         format.html { redirect_to [ :admins, @newsletter_subscription ], notice: "Newsletter subscription was successfully created." }
         format.json { render :show, status: :created, location: @newsletter_subscription }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(
+          "subscription_form",
+          partial: "subscriptions/success",
+          locals: { subscription: @subscription }
+        )}
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @newsletter_subscription.errors, status: :unprocessable_entity }
@@ -65,6 +71,6 @@ class Admins::NewsletterSubscriptionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def newsletter_subscription_params
-      params.fetch(:newsletter_subscription, {})
+      params.fetch(:newsletter_subscription, {}).permit(:email)
     end
 end

@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
       AppConfig.default_locale
     end
   end
+
+  def ensure_turbo_frame
+    unless request.headers["Turbo-Frame"]
+      head :bad_request
+    end
+  end
 end

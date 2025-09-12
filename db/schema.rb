@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_08_103908) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_12_074524) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -54,6 +54,64 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_08_103908) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bed_locations", force: :cascade do |t|
+    t.bigint "bed_id"
+    t.bigint "location_id"
+    t.integer "row"
+    t.integer "column"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bed_id"], name: "index_bed_locations_on_bed_id"
+    t.index ["location_id"], name: "index_bed_locations_on_location_id"
+  end
+
+  create_table "bed_patient_assignments", force: :cascade do |t|
+    t.bigint "bed_id"
+    t.bigint "patient_id"
+    t.bigint "encounter_id"
+    t.bigint "start_at_id"
+    t.bigint "end_at_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bed_id"], name: "index_bed_patient_assignments_on_bed_id"
+    t.index ["encounter_id"], name: "index_bed_patient_assignments_on_encounter_id"
+    t.index ["end_at_id"], name: "index_bed_patient_assignments_on_end_at_id"
+    t.index ["patient_id"], name: "index_bed_patient_assignments_on_patient_id"
+    t.index ["start_at_id"], name: "index_bed_patient_assignments_on_start_at_id"
+  end
+
+  create_table "bed_tag_maps", force: :cascade do |t|
+    t.bigint "bed_id"
+    t.bigint "bed_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bed_id"], name: "index_bed_tag_maps_on_bed_id"
+    t.index ["bed_tag_id"], name: "index_bed_tag_maps_on_bed_tag_id"
+  end
+
+  create_table "bed_tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bed_types", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "display_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "beds", force: :cascade do |t|
+    t.string "bed_number"
+    t.bigint "bed_type_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bed_type_id"], name: "index_beds_on_bed_type_id"
   end
 
   create_table "cohert_memberships", force: :cascade do |t|
@@ -193,6 +251,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_08_103908) do
   create_table "notification_templates", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_groups", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "encounter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["encounter_id"], name: "index_order_groups_on_encounter_id"
+    t.index ["patient_id"], name: "index_order_groups_on_patient_id"
+  end
+
+  create_table "order_types", force: :cascade do |t|
+    t.bigint "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_order_types_on_parent_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -338,6 +412,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_08_103908) do
   add_foreign_key "location_tag_maps", "location_tags"
   add_foreign_key "location_tag_maps", "locations"
   add_foreign_key "locations", "locations"
+  add_foreign_key "order_groups", "encounters"
+  add_foreign_key "order_groups", "patients"
+  add_foreign_key "order_types", "order_types", column: "parent_id"
   add_foreign_key "orders", "encounters"
   add_foreign_key "orders", "orders", column: "order_reason_id"
   add_foreign_key "orders", "orders", column: "previous_order_id"

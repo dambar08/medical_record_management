@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Beds" %>
+
+<h1>Beds</h1>
+
+<div id="beds">
+  <% @beds.each do |bed| %>
+    <%= render bed %>
+    <p>
+      <%= link_to "Show this bed", [:admins, bed] %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bed", new_admins_bed_path %>

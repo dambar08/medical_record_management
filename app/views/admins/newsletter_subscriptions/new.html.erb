@@ -2,7 +2,9 @@
 
 <h1>New newsletter subscription</h1>
 
-<%= render "form", newsletter_subscription: @newsletter_subscription %>
+<%= turbo_frame_tag "newsletter_subscription_form" do %>
+  <%= render "form", newsletter_subscription: @newsletter_subscription %>
+<% end %>
 
 <br>
 

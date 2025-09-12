@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
+    resources :beds
     resources :newsletter_subscriptions
     namespace :patients do
       resources :appointments
@@ -58,6 +59,7 @@ Rails.application.routes.draw do
   end
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount Lookbook::Engine, at: "/lookbook" if Rails.env.development?
   mount Rswag::Api::Engine => "/api-docs"
   mount Rswag::Ui::Engine => "/api-docs"
   resources :announcements

@@ -1,0 +1,28 @@
+<nav>
+  <ul class="min-w-xs">
+    <li>
+      <%= link_to admins_root_path do  %>
+        <div class="p-2 hover:bg-neutral-100">Summary</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_patients_path do %>
+        <div class="p-2 hover:bg-neutral-100">Bed allocation</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_laboratories_path do %>
+        <div class="p-2 hover:bg-neutral-100">Bed types</div>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admins_wards_path do %>
+        <div class="p-2 hover:bg-neutral-100">Bed tags</div>
+      <% end %>
+    </li>
+  </ul>
+</nav>
+
+
+
+

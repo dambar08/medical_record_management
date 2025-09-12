@@ -1,0 +1,11 @@
+<% content_for :title, "New bed" %>
+
+<h1>New bed</h1>
+
+<%= render "form", bed: @bed %>
+
+<br>
+
+<div>
+  <%= link_to "Back to beds", admins_beds_path %>
+</div>

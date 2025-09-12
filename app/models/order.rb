@@ -30,4 +30,6 @@ class Order < ApplicationRecord
   ALL_URGENCIES = [ "routine", "stat", "on_scheduled_date" ]
   ALL_ACTIONS = [ "new", "revise", "discontinue", "renew" ]
   ALL_FULFILLER_STATUSES = [ "received", "in_progress", "exception", "on_hold", "declined", "completed" ]
+
+  belongs_to :patient
 end
