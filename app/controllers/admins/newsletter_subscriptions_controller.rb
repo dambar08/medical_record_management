@@ -1,5 +1,5 @@
 class Admins::NewsletterSubscriptionsController < ApplicationController
-  before_action :ensure_turbo_frame, only: [:new]
+  before_action :ensure_turbo_frame, only: [ :new ]
   before_action :set_newsletter_subscription, only: %i[ show edit update destroy ]
 
   # GET /admins/newsletter_subscriptions or /admins/newsletter_subscriptions.json

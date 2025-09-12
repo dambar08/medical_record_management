@@ -1,5 +1,4 @@
 class ApplicationRecord < ActiveRecord::Base
-
   include ActiveRecord::Updatable
 
   primary_abstract_class

@@ -25,7 +25,7 @@ class Admins::BedsController < ApplicationController
 
     respond_to do |format|
       if @bed.save
-        format.html { redirect_to [:admins, @bed], notice: "Bed was successfully created." }
+        format.html { redirect_to [ :admins, @bed ], notice: "Bed was successfully created." }
         format.json { render :show, status: :created, location: @bed }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class Admins::BedsController < ApplicationController
   def update
     respond_to do |format|
       if @bed.update(bed_params)
-        format.html { redirect_to [:admins, @bed], notice: "Bed was successfully updated." }
+        format.html { redirect_to [ :admins, @bed ], notice: "Bed was successfully updated." }
         format.json { render :show, status: :ok, location: @bed }
       else
         format.html { render :edit, status: :unprocessable_entity }

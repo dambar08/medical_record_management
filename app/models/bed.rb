@@ -15,7 +15,7 @@
 #
 
 class Bed < ApplicationRecord
-  STATUSES = ["available","occupied"]
+  STATUSES = [ "available", "occupied" ]
 
 
   has_one :bed_location
@@ -34,5 +34,4 @@ class Bed < ApplicationRecord
 
     scope status.to_sym, -> { where(status: status) }
   end
-
 end
