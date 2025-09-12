@@ -55,6 +55,10 @@ group :test do
   gem "simplecov", require: false
   gem "simplecov_json_formatter", require: false
   gem "rspec-rails", "~> 7.1"
+  gem "pundit-matchers", "~> 4.0"
+  gem "rspec-retry", "~> 0.6.2"
+  gem "shoulda-matchers", "~> 6.5"
+  gem "ruby-prof", "~> 1.7", require: false
 end
 
 gem "rails-settings-cached", "~> 2.9"
