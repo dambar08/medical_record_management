@@ -70,7 +70,9 @@
     "pretest": "yarn run lint",
     "test": "yarn run jest --",
     "build:sass": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css ./app/assets/stylesheets/admins_application.sass.scss:./app/assets/builds/admins_application.css --no-source-map --load-path=node_modules",
-    "build:tailwind": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build:tailwind": "npx @tailwindcss/cli -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "rails:i18n:health": "i18n-tasks health",
+    "rails:i18n:add-missing": "i18n-tasks add-missing"
   },
   "engines": {
     "node": ">=22.13.1"
