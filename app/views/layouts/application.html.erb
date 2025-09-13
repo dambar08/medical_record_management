@@ -1,4 +1,31 @@
 <%= render "layouts/shared/htmldoc" do %>
+  <header class="">
+    <div class="bg-black text-yellow-600">
+      <div class="container mx-auto">
+        <div class="flex flex-row gap-2 ">
+          <div class="p-2">Community</div>
+          <div class="p-2">Developer</div>
+          <div class="p-2">Documentation</div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto py-6">
+      <div class="flex flex-row items-center justify-between gap-4">
+        <div>
+          <div><%=link_to "Medical Record System", root_path %></div>
+        </div>
+        <div>
+          <nav>
+            <ul class="flex flex-row gap-2">
+              <li><%= link_to I18n.t('views.pages.index.footer_product'), product_pages_path %></li>
+            <li><%= link_to I18n.t('views.pages.index.footer_what_we_do'), what_we_do_pages_path %></li>
+            <li><%= link_to I18n.t('views.pages.index.footer_who_we_are'), who_we_are_pages_path %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
   <% if alert = flash[:alert] %>
     <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
   <% end %>
@@ -8,4 +35,31 @@
   <main>
     <%= yield %>
   </main>
+  <footer class="bg-black text-white py-2">
+    <div class="container mx-auto ">
+      <div class="grid grid-cols-3 gap-4 py-16">
+        <div>
+          <div class="text-lg font-bold">Medical Record Management</div>
+        </div>
+        <nav>
+          <ul>
+            <li><%= link_to I18n.t('views.pages.index.footer_product'), product_pages_path %></li>
+            <li><%= link_to I18n.t('views.pages.index.footer_what_we_do'), what_we_do_pages_path %></li>
+            <li><%= link_to I18n.t('views.pages.index.footer_who_we_are'), who_we_are_pages_path %></li>
+          </ul>
+        </nav>
+        <div></div>
+      </div>
+      <div class="flex flex-col items-center justify-center text-sm">
+        <nav>
+          <ul class="flex flex-row gap-2">
+            <li><%=link_to "Terms", terms_legals_path %></li>
+            <li><%=link_to "License", license_legals_path %></li>
+            <li><%=link_to "Privacy Policy", privacy_policy_legals_path %></li>
+          </ul>
+        </nav>
+        <div>Copyright &copy; <%= Date.current.year %> OpenMedicalRecord.</div>
+      </div>
+    </div>
+  </footer>
 <% end %>

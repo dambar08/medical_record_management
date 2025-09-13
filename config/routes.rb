@@ -76,4 +76,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#index"
+  resources :pages, only: [] do
+    collection do
+      get :product
+      get :what_we_do, path: "what-we-do"
+      get :who_we_are, path: "who-we-are"
+    end
+  end
 end

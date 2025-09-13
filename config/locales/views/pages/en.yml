@@ -1,0 +1,8 @@
+---
+en:
+  views:
+    pages:
+      index:
+        footer_product: "Product"
+        footer_what_we_do: "What we do"
+        footer_who_we_are: "Who we are"

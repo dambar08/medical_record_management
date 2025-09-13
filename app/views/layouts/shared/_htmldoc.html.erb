@@ -2,11 +2,17 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Medical Record Management" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Medical Record Management">
+    <%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
