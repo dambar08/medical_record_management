@@ -1,0 +1,12 @@
+<% content_for :title, "Editing bed type" %>
+
+<h1>Editing bed type</h1>
+
+<%= render "form", bed_type: @bed_type %>
+
+<br>
+
+<div>
+  <%= link_to "Show this bed type", [:admins, @bed_type] %> |
+  <%= link_to "Back to bed types", admins_bed_types_path %>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bed_type %>
+
+<div>
+  <%= link_to "Edit this bed type", edit_admins_bed_type_path(@bed_type) %> |
+  <%= link_to "Back to bed types", admins_bed_types_path %>
+
+  <%= button_to "Destroy this bed type", [:admins, @bed_type], method: :delete %>
+</div>

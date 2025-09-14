@@ -1,62 +1,23 @@
-<% content_for :title, "Appointments" %>
+<%= content_for :left_sidebar do %>
+  <%= render "admins/shared/bed_management_menu" %>
+<% end %>
+
+<% content_for :title, "Bed tags" %>
+
 <div class="w-full divide-y divide-neutral-300">
   <div class="flex justify-between items-center">
     <div class="p-2">
       <div>Clinic</div>
-      <h1 class="font-medium text-3xl">Appointments</h1>
+      <h1 class="font-medium text-3xl">Bed tags</h1>
     </div>
+    <div class="p-2"><%= Date.current.strftime('%A, %I:%M %p') %></div>
   </div>
   <div>
-    <div class="flex flex-row justify-between py-4 px-4">
-      <div>Appointment Metrics</div>
-      <div class="flex flex-row gap-2 items-center">
-        <div class="border border-blue-500 text-blue-500 font-light px-3">Appointments Calander</div>
-        <%= link_to "Create appointment", new_admins_appointment_path, class: "bg-blue-500 text-white font-light px-3" %>
-      </div>
-    </div>
-    <div class="grid grid-cols-3 gap-2 md:gap-4 py-4 px-4">
-      <div class="border border-neutral-300 p-4">
-        <div>Scheduled Appointments</div>
-        <div class="flex flex-row items-center justify-between">
-          <div class="text-xs">Appointments</div>
-          <div class="flex flex-row items-center gap-2">
-            <div class="text-xs">Checked in </div>
-            <div class="text-xs">Not arrived</div>
-          </div>
-        </div>
-      </div>
-      <div class="border border-neutral-300 p-4">
-        <div>Highest volume service: Today</div>
-        <div class="flex flex-row items-center justify-between">
-          <div class="text-xs">Appointments</div>
-          <div class="flex flex-row items-center">
-            <div class="text-xs">General Medicine Service </div>
-          </div>
-        </div>
-      </div>
-      <div class="border border-neutral-300 p-4">
-        <div>Providers booked: Today</div>
-        <div class="flex flex-row items-center justify-between">
-          <div class="text-xs">Appointments</div>
-          <div class="flex flex-row items-center">
-            <div class="text-xs">Providers</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="px-4 py-4">
-      <div class="flex flex-row">
-        <div class="px-3 w-56  border border-neutral-300">Expected</div>
-        <div  class="px-3 w-56 border border-neutral-300">Checked In</div>
-        <div  class="px-3 w-56 border border-neutral-300">Completed</div>
-        <div  class="px-3 w-56 border border-neutral-300">Cancelled</div>
-      </div>
-    </div>
     <div class="px-4 py-4">
       <div class="p-4 border border-neutral-300">
         <div class="flex flex-row">
           <div>
-            <div class="font-bold">Expected Appointments</div>
+            <div class="font-bold">Bed types</div>
             <div class="bg-emerald-700 h-2 w-2/12"></div>
           </div>
         </div>

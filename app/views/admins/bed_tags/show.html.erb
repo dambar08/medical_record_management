@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bed_tag %>
+
+<div>
+  <%= link_to "Edit this bed tag", edit_admins_bed_tag_path(@bed_tag) %> |
+  <%= link_to "Back to bed tags", admins_bed_tags_path %>
+
+  <%= button_to "Destroy this bed tag", [:admins, @bed_tag], method: :delete %>
+</div>

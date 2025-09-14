@@ -1,0 +1,17 @@
+<%= form_with(model: [:admins, bed_type]) do |form| %>
+  <% if bed_type.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bed_type.errors.count, "error") %> prohibited this bed_type from being saved:</h2>
+
+      <ul>
+        <% bed_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

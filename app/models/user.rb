@@ -14,9 +14,13 @@
 #
 
 class User < ApplicationRecord
-  rolify
+  include Retirable
+
+  rolify strict: true
   has_secure_password
   has_many :sessions, dependent: :destroy
+
+  validates :username, length: { minimum: 3, maximum: 50 }, allow_blank: true
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 end

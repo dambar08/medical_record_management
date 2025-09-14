@@ -249,6 +249,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_074524) do
   end
 
   create_table "notification_templates", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "template", null: false
+    t.bigint "ordinal", default: 0, null: false
+    t.string "sender", null: false
+    t.string "recipients", null: false
+    t.string "subject", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -351,12 +357,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_074524) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username", limit: 50
     t.string "email_address", null: false
     t.string "password_digest", null: false
     t.string "locale", default: "en", null: false
+    t.datetime "retired_at"
+    t.bigint "retired_by_id"
+    t.string "retire_reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
+    t.index ["retired_at"], name: "index_users_on_retired_at", unique: true
+    t.index ["retired_by_id"], name: "index_users_on_retired_by_id"
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
@@ -423,6 +435,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_074524) do
   add_foreign_key "relationships", "patients", column: "patient_b_id"
   add_foreign_key "relationships", "relationship_types"
   add_foreign_key "sessions", "users"
+  add_foreign_key "users", "users", column: "retired_by_id"
   add_foreign_key "visits", "concepts", column: "indication_id"
   add_foreign_key "visits", "locations"
   add_foreign_key "visits", "patients"

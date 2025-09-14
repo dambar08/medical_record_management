@@ -18,8 +18,15 @@
           <nav>
             <ul class="flex flex-row gap-2">
               <li><%= link_to I18n.t('views.pages.index.footer_product'), product_pages_path %></li>
-            <li><%= link_to I18n.t('views.pages.index.footer_what_we_do'), what_we_do_pages_path %></li>
-            <li><%= link_to I18n.t('views.pages.index.footer_who_we_are'), who_we_are_pages_path %></li>
+              <li><%= link_to I18n.t('views.pages.index.footer_what_we_do'), what_we_do_pages_path %></li>
+              <li><%= link_to I18n.t('views.pages.index.footer_who_we_are'), who_we_are_pages_path %></li>
+              <li>
+                <% if Current.user  %>
+                  <%= link_to "Logout", session_path, data: { turbo_method: :delete } %>
+                <% else %>
+                  <%= link_to "Getting Started", new_session_path, class: "bg-black text-white p-2" %>
+                <% end %>
+              </li>
             </ul>
           </nav>
         </div>

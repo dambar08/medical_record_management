@@ -1,0 +1,46 @@
+<%= content_for :left_sidebar do %>
+  <%= render "admins/shared/bed_management_menu" %>
+<% end %>
+<% content_for :title, "Bed Management" %>
+<div class="w-full divide-y divide-neutral-300 min-h-screen">
+  <div class="flex justify-between items-center">
+    <div class="p-2">
+      <div>Clinic</div>
+      <h1 class="font-medium text-3xl">Bed Management</h1>
+    </div>
+    <div class="p-2"><%= Date.current.strftime('%A, %I:%M %p') %></div>
+  </div>
+  <div>
+    <div class="grid grid-cols-3 gap-4 p-4">
+      <div class="border border-neutral-300">
+        <div class="p-4">
+          <div>Active Visits</div>
+        </div>
+        <div  class="p-4">
+          <div class="text-xs font-light">Patients</div>
+          <div  class="text-2xl font-bold">0</div>
+        </div>
+      </div>
+      <div class="border border-neutral-300">
+        <div  class="p-4">
+          <div>Total Visits Today</div>
+        </div>
+        <div  class="p-4">
+          <div class="text-xs font-light">Patients</div>
+          <div class="text-2xl font-bold">0</div>
+        </div>
+      </div>
+      <div class="border border-neutral-300">
+        <div  class="p-4">
+          <div>Scheduled For Today</div>
+        </div>
+        <div  class="p-4">
+          <div class="text-xs font-light">Patients</div>
+          <div  class="text-2xl font-bold">0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

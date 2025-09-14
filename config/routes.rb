@@ -21,6 +21,13 @@ Rails.application.routes.draw do
   end
 
   namespace :admins do
+    root "dashboards#show"
+    scope :bed_management do
+      get "", to: "dashboards#bed_management", as: "bed_management"
+      resource :bed_administrations, only: [:show]
+      resources :bed_tags
+      resources :bed_types
+    end
     resources :beds
     resources :newsletter_subscriptions
     namespace :patients do
@@ -31,7 +38,6 @@ Rails.application.routes.draw do
     resources :service_queues
     resources :coherts
     resources :appointments
-    root "dashboards#show"
     resource :dashboard, only: [ :show ]
     resources :patients do
       resources :conditions

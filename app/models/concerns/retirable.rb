@@ -2,9 +2,11 @@ module Retirable
   extend ActionSupport::Concern
 
   included do
-    def retire
-      raise "Already retired" if restired_at.present?
-      update(retired_at: Time.current)
+    validates :retired_by, presence: true, if: -> { retired_at.present? }
+
+    def retire(by:  Current.user, reason:)
+      raise "Already retired" if retired_at.present?
+      update(retired_by: by, retired_at: Time.current, retire_reason: reason)
     end
 
     def retired?

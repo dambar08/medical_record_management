@@ -1,4 +1,4 @@
-class Admins::NewsletterSubscriptionsController < ApplicationController
+class Admins::NewsletterSubscriptionsController < Admins::ManagementController
   before_action :ensure_turbo_frame, only: [ :new ]
   before_action :set_newsletter_subscription, only: %i[ show edit update destroy ]
 
