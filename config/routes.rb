@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root "dashboards#show"
+    get :system_administration, to: "dashboards#system_administration"
     scope :bed_management do
       get "", to: "dashboards#bed_management", as: "bed_management"
       resource :bed_administrations, only: [:show]

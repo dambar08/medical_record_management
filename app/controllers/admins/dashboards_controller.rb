@@ -4,4 +4,7 @@ class Admins::DashboardsController < Admins::ManagementController
 
   def bed_management
   end
+
+  def system_administration
+  end
 end
