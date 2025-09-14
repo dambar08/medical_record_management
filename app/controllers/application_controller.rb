@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = if %w[en].include?(params[:locale])
       params[:locale]
     else
-      AppConfig.default_locale
+      Current.user&.locale || AppConfig.default_locale
     end
   end
 
