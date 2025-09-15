@@ -43,13 +43,15 @@
         <% end %>
       </div>
       <div class="bg-white shadow p-4  hover:bg-neutral-100 cursor-pointer">
-        <div class="py-4 text-sm">Manage Service Queues</div>
-        <div>Service Queues Admin</div>
-        <div class="flex items-center justify-end">
-          <div class="text-blue-500">
-            <svg focusable="false"  xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"></path></svg>
+        <%= link_to admins_service_queues_path do %>
+          <div class="py-4 text-sm">Manage Service Queues</div>
+          <div>Service Queues Admin</div>
+          <div class="flex items-center justify-end">
+            <div class="text-blue-500">
+              <svg focusable="false"  xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"></path></svg>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
       <div class="bg-white shadow p-4  hover:bg-neutral-100 cursor-pointer">
         <div class="py-4 text-sm">Manage Cohorts</div>

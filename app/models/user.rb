@@ -19,6 +19,8 @@ class User < ApplicationRecord
   rolify strict: true
   has_secure_password
   has_many :sessions, dependent: :destroy
+  has_many :alert_recipients, inverse_of: :user
+  has_many :alerts, through: :alert_recipients, inverse_of: :user
 
   validates :username, length: { minimum: 3, maximum: 50 }, allow_blank: true
 

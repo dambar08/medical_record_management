@@ -1,2 +1,2 @@
-class Admins::BedController < ApplicationController
+class Admins::BedController < Admins::ManagementController
 end

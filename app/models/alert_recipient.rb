@@ -16,4 +16,9 @@
 #
 
 class AlertRecipient < ApplicationRecord
+  belongs_to :user, inverse_of: :alert_recipients
+  belongs_to :alert, inverse_of: :alert_recipients
+
+  scope :unread, -> { where(read_at: nil) }
+  scope :read, -> { where.not(read_at: nil) }
 end

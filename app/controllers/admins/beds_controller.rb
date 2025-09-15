@@ -1,4 +1,4 @@
-class Admins::BedsController < ApplicationController
+class Admins::BedsController < Admins::ManagementController
   before_action :set_bed, only: %i[ show edit update destroy ]
 
   # GET /admins/beds or /admins/beds.json

@@ -6,8 +6,8 @@
 #  patient_a_id         :integer          not null
 #  relationship_type_id :integer          not null
 #  patient_b_id         :integer          not null
-#  start_date           :datetime
-#  end_date             :datetime
+#  start_date           :date
+#  end_date             :date
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #

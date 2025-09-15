@@ -1,4 +1,4 @@
-class Admins::CohertsController < ApplicationController
+class Admins::CohertsController < Admins::ManagementController
   before_action :set_cohert, only: %i[ show edit update destroy ]
 
   # GET /admins/coherts or /admins/coherts.json

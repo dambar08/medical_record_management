@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_12_074524) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_14_031844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -209,6 +209,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_074524) do
     t.index ["visit_id"], name: "index_encounters_on_visit_id"
   end
 
+  create_table "forms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "location_tag_maps", force: :cascade do |t|
     t.bigint "location_id", null: false
     t.bigint "location_tag_id", null: false
@@ -314,8 +319,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_074524) do
     t.bigint "patient_a_id", null: false
     t.bigint "relationship_type_id", null: false
     t.bigint "patient_b_id", null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_a_id"], name: "index_relationships_on_patient_a_id"

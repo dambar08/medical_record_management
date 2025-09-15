@@ -22,6 +22,17 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root "dashboards#show"
+    resource :form_builder,  only: [:show] do
+    end
+    resource :reports, only: [:show] do
+      get :scheduled_overview
+    end
+    resource :ocl,  only: [:show] do
+      collection do
+        get :import
+        get :previous_import
+      end
+    end
     get :system_administration, to: "dashboards#system_administration"
     scope :bed_management do
       get "", to: "dashboards#bed_management", as: "bed_management"
@@ -38,7 +49,11 @@ Rails.application.routes.draw do
     resources :wards
     resources :service_queues
     resources :coherts
-    resources :appointments
+    resources :appointments do
+      collection do
+        resources :calendars, only: [:index, :show]
+      end
+    end
     resource :dashboard, only: [ :show ]
     resources :patients do
       resources :conditions

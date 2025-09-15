@@ -1,10 +1,10 @@
 module Retirable
-  extend ActionSupport::Concern
+  extend ActiveSupport::Concern
 
   included do
-    validates :retired_by, presence: true, if: -> { retired_at.present? }
+    # validates :retired_by, presence: true, if: -> { retired_at.present? }
 
-    validate :retirement_consistency
+    # validate :retirement_consistency
 
     def retire(by:  Current.user, reason:)
       raise "Already retired" if retired_at.present?
