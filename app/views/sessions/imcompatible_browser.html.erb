@@ -1,0 +1,27 @@
+<div class="mx-auto max-w-[50ch] p-4 sm:px-8 sm:shadow-lg sm:rounded-lg sm:border sm:border-gray-300 sm:bg-white">
+  <header>
+    <h1 class="text-3xl leading-5 text-center mt-0 mb-0">
+      <%= I18n.t('views.sessions.incompatible_browser.upgrade_message') %>
+    </h1>
+    <div class="flex items-start gap-2">
+      <div class='absolute top-4 left-4'>
+        <%= I18n.t('views.sessions.incompatible_browser.incompatible_browser_message') %>
+      </div>
+      <p class="mt-0">My Podcast requires a modern web browser. Please use one of the browsers listed below and make sure auto-updates are enabled.</p>
+    </div>
+  </header>
+
+  <div class="flex items-center flex-wrap gap-2 justify-center m-0">
+    <% AllowBrowser::VERSIONS.each do |browser, version| %>
+      <% next unless version %>
+
+      <div class="basis-[20%] flex flex-col">
+        <%= image_tag "browsers/#{browser}.svg", aria: { hidden: "true" }, class: "aspect-square w-[7ch] center" %>
+        <div class="flex flex-col items-center mt-0">
+          <strong><%= browser.capitalize %></strong>
+          <span> <%= version %>+</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

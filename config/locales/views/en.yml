@@ -1,0 +1,7 @@
+---
+en:
+  views:
+    sessions:
+      incompatible_browser:
+        upgrade_message: Upgrade to a supported web browser
+        incompatible_browser_message: Upgrade to a supported web browser. Campfire requires a modern web browser. Please use one of the browsers listed below and make sure auto-updates are enabled.
